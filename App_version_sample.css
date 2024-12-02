@@ -8,12 +8,9 @@ body {
     align-items: flex-start;
     flex-direction: column;
     height: 100vh;
-    overflow: hidden;
-    width: calc(100% - 293px)
 }
 
 .app {
-    font-size: medium;
     display: flex;
     width: 100%;
     height: 100vh;
@@ -29,38 +26,14 @@ body {
     overflow-y: auto;
 }
 
-.sidebar h2 {
-    margin: 0 0 15px 0;
-    bottom: 0;
-}
-
-.chat {
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.chat.hover{
-    background-color: white;
-    opacity: 0.2;
-}
-
-.selected {
-    background-color: white;
-    opacity: 0.2;
-}
-
 .chat-box {
     flex: 1;
     display: flex;
     flex-direction: column;
     padding: 20px;
     background-color: #191627;
-    position: relative;
     color: white;
-    height: calc(100vh - 60px);
-    margin-left: 0;
+    height: 100vh;
     overflow-y: auto;
 }
 
@@ -73,8 +46,6 @@ body {
     gap: 30px;
     background-color: #191627;
     border-radius: 8px;
-    overflow-y: auto;
-    left: 250px;
 }
 
 .message-box {
@@ -84,26 +55,24 @@ body {
     color: white;
     margin: 5px 0;
     border-radius: 10px;
-    text-align: left;
+    text-align: center;
     animation: fadeIn 0.3s forwards;
     display: inline-block;
-    max-width: 70%;
+    max-width: 100%;
 }
 
 .message-box.user {
     background-color: #5E548E;
     color: white;
     align-self: flex-end;
-    margin-left: auto;
-    animation: slideFromRight 0.3s ease-in-out var(--d) forwards;
+    animation: slideLeft 0.3s ease-in-out var(--d) forwards;
 }
 
 .message-box.ai {
     background-color: #9F86C0;
     color: white;
     align-self: flex-start;
-    margin-right: auto;
-    animation: slideFromLeft 0.3s ease-in-out var(--d) forwards;
+    animation: slideRight 0.3s ease-in-out var(--d) forwards;
 }
 
 .chat-bubble {
@@ -129,15 +98,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    background-color: #191627;
-    border-top: 1px solid #9F86C0;
-    position: fixed;
-    bottom: 0;
-    left: 293px;
-    right: 0;
-    box-sizing: border-box;
-    width: calc(100% - 293px);
+    margin-top: 10px;
 }
 
 input[type="text"] {
@@ -147,18 +108,16 @@ input[type="text"] {
     border-radius: 4px;
     background-color: #191627;
     color: white;
-    width: calc(100% - 100px);
-    margin-right: 10px;
 }
 
 button {
+    margin-left: 10px;
     padding: 10px 20px;
     background-color: #5E548E;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    min-width: 80px;
 }
 
 button:hover {
@@ -174,7 +133,7 @@ button:hover {
     }
 }
 
-@keyframes slideFromRight {
+@keyframes slideLeft {
     0% {
         transform: translateX(100%);
         opacity: 1;
@@ -185,7 +144,7 @@ button:hover {
     }
 }
 
-@keyframes slideFromLeft {
+@keyframes slideRight {
     0% {
         transform: translateX(-100%);
         opacity: 1;

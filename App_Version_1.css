@@ -3,7 +3,6 @@
   font-family:Arial, sans-serif;
   margin:0;
   padding:0;
-  height:100px;
   display:flex;
   justify-content:center;
   align-items:center;
@@ -42,14 +41,14 @@ max-width:100%;
 background-color:#5E548E;
 color:white;
 align-self:flex-end;
-animation:slideLeft 0.5s ease-in-out var(--d) forwards;
+animation:slideLeft 0.3s ease-in-out var(--d) forwards;
 }
 
 .message-box.ai{
 background-color:#9F86C0;
 color:white;
 align-self:flex-start;
-animation:slideRight 0.5s ease-in-out var(--d) forwards;
+animation:slideRight 0.3s ease-in-out var(--d) forwards;
 }
 
 .chat-bubble{
@@ -57,17 +56,18 @@ position:absolute;
 width:10px;
 height:10px;
 border-radius:50%;
-background-color:#5E548E;
 }
 
 .chat-bubble.right{
 right:100%;
 top:10%;
+background-color:#5E548E;
 }
 
 .chat-bubble.left{
 left:100%;
 top:10%;
+background-color:#9F86C0;
 }
 
 @keyframes fadeIn{

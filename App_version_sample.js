@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './App.css';
+import './App_version_sample.css';
 
 function App() {
     const [chats] = useState([
@@ -12,47 +12,50 @@ function App() {
 
     const [selectedChat, setSelectedChat] = useState(1);
     const [allChats, setAllChats] = useState({
-        1: [],
-        2: [],
-        3: [],
-        4: [],
-        5: []
+        1: [{ text: 'Hiii', isUser: true }, { text: 'Hello there! How may I help you today?', isUser: false }],
+        2: [{ text: 'Hiii', isUser: true }, { text: 'Hello there! How may I help you today?', isUser: false }],
+        3: [{ text: 'Hiii', isUser: true }, { text: 'Hello there! How may I help you today?', isUser: false }],
+        4: [{ text: 'Hiii', isUser: true }, { text: 'Hello there! How may I help you today?', isUser: false }],
+        5: [{ text: 'Hiii', isUser: true }, { text: 'Hello there! How may I help you today?', isUser: false }]
     });
 
     const [input, setInput] = useState('');
-    const [aiFirstMsg, setAiFirstMsg] = useState(false);
 
     const sendMsg = () => {
-        if (!input.trim()) return;
+        if (!allChats[selectedChat]) {
+            console.error("Selected chat does not exist.");
+            return; // Prevent sending message if selected chat is invalid
+        }
+    
         const userMsg = {
             text: input,
             isUser: true
         };
-
+    
         setAllChats(prevMessages => ({
             ...prevMessages,
             [selectedChat]: [...prevMessages[selectedChat], userMsg]
         }));
-
+    
         setInput('');
-
-        const aiMsg = aiFirstMsg
-            ? { text: "An explanation from the AI bot", isUser: false }
-            : { text: "Hello, how may I help you today?", isUser: false};
-
+    
+        const aiMsg = {
+            text: "An explanation from the AI bot",
+            isUser: false
+        };
+    
         setTimeout(() => {
             setAllChats(prevMessages => ({
                 ...prevMessages,
                 [selectedChat]: [...prevMessages[selectedChat], aiMsg]
             }));
-            setAiFirstMsg(true);
         }, 3000);
     };
 
     return (
         <div className="app">
             <div className="sidebar">
-                <h1>Chats</h1>
+                <h2>Chats</h2>
                 {chats.map(chat => (
                     <div
                         key={chat.id}
@@ -65,7 +68,7 @@ function App() {
             </div>
 
             <div className="chat-box">
-                <h1>{chats.find(chat => chat.id === selectedChat)?.name}</h1>
+                <h2>{chats.find(chat => chat.id === selectedChat)?.name}</h2>
                 <div className="container">
                     {allChats[selectedChat].map((msg, index) => (
                         <div
