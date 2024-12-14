@@ -7,13 +7,13 @@ npx create-react-app chat
 
 This command created a new React project app named "chat", with three folders namely 'public', 'src' and 'node_modules', along with a readme file, a package.json and a package-lock.json. The 'src' folder contains all the source codes for the chat user interface.
 
-=================================================================================================================================================================
+==========================================================================================
 
 The Chat_UI.js file shows a user interface where the application allows the user to select different chats and message the AI bot in that selected chat. It shows a conversation between the user and the AI bot where the bot responds with a constant message for now. This user interface consists of a sidebar with different pre-defined 'names' for chats that alllows the user to switch between multiple chats and have a conversation with the AI bot.
 
 Some of the key features of this user interface is that it allows the user to select different chats, from the list of chats that are pre-defined, to interact with the AI bot. The users will be able to type and send messages to the selected chat and also receive constant AI responses from the AI chat bot.
 
-=================================================================================================================================================================
+==========================================================================================
 
 The source code imports 'React' and the 'useState' hook to ensure that state variables can be added to the react components that are being used. It also imports the 'Chat_UI.css' file, that contains the styling for the chat user interface.
 
@@ -32,15 +32,15 @@ The sendMsg function is responsible for sending the messages. Firstly, it checks
 
  Apart from these state variables, the source code also consists of a sidebar --- displaying the different chats from which the user can select which chat to select and chat in --- an input area --- where in the messages can be typed by the user and sent by hitting the enter key or clicking on the send button -- and finally the chat box area, where the messages between the user and the AI bot in each chat is displayed.
 
- ================================================================================================================================================================
+ ==========================================================================================
 
  The 'Chat_UI.css' file consists of the styling for each component that has been used in the 'Chat_UI.js' file.
 
- ================================================================================================================================================================
+ ==========================================================================================
 
  The code can also be altered with arise in further requirements such as real-time response from the AI Bot, permanent chat history and so on.
 
- ================================================================================================================================================================
+ ==========================================================================================
 
  To run this react based Chat User Interface app, I went to the directory of this project using this command:
  cd chat
@@ -48,4 +48,5 @@ The sendMsg function is responsible for sending the messages. Firstly, it checks
  And then run the Chat UI application using:
  npm start
 
-==================================================================================================================================================================================================================================================================================================================================
+==========================================================================================
+==========================================================================================
